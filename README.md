@@ -8,7 +8,7 @@
 <h3 align="center">NO-MAD Visuals — a live, audio-reactive techno visualiser for DJs</h3>
 
 <p align="center">
-  Plug in Traktor (or Mixxx), press start, and nine GPU-driven scenes react to every kick, clap and hat in your set.<br>
+  Plug in any audio — your DJ software, a mixer's USB out or a mic — press start, and nine GPU-driven scenes react to every kick, clap and hat.<br>
   One HTML file. No install, no build step, no cloud — runs offline in Chrome.
 </p>
 
@@ -24,7 +24,7 @@
 
 ## Why
 
-Most VJ tools are either heavy desktop software or loops that ignore the music. NO-MAD Visuals listens to your actual mix: it tracks the beat and the bar, splits the sound into bass, mids and highs, and drives a minimal, dark, black-and-red look built for techno — on a single browser tab next to your DJ software.
+Most VJ tools are either heavy desktop software or loops that ignore the music. NO-MAD Visuals listens to your actual mix: it tracks the beat and the bar, splits the sound into bass, mids and highs, and drives a minimal, dark, black-and-red look built for techno — on a single browser tab, from whatever audio you feed it.
 
 ## Scenes
 
@@ -54,21 +54,24 @@ Each band is measured against its own recent level, so it reacts to the *hits* e
 
 **Just want to see it?** Open the [live demo](https://nizar2104.github.io/NO-MAD-visuals/) in Chrome, press **S**, allow audio and pick an input — your mic works for a quick test. For a real set, route your DJ software's audio in as below.
 
-1. **Route your DJ software's audio into the browser** with a loopback device:
-   - [BlackHole](https://existential.audio/blackhole/) (free) — create a *Multi-Output Device* in Audio MIDI Setup with your speakers + BlackHole, and set Traktor's output to it; **or**
-   - [Loopback](https://rogueamoeba.com/loopback/) — make a virtual device with Traktor as its source.
+1. **Pick an audio input.** Anything Chrome can hear works:
+   - **DJ / music software** (Traktor, Mixxx, rekordbox, Serato, Ableton, …) through a loopback device:
+     [BlackHole](https://existential.audio/blackhole/) (free) — create a *Multi-Output Device* in Audio MIDI Setup with your speakers + BlackHole and set your software's output to it; **or**
+     [Loopback](https://rogueamoeba.com/loopback/) — make a virtual device with your software as its source;
+   - **a mixer or audio interface** — its USB / line input appears as an input device directly;
+   - **a microphone** — the built-in mic picking up the room works too (great for a quick test).
 2. **Use the [live demo](https://nizar2104.github.io/NO-MAD-visuals/)**, or **serve the folder yourself** for offline use at gigs (browsers need `http://` for audio and MIDI):
    ```bash
    python3 -m http.server 8765
    ```
 3. Open **http://localhost:8765** in **Chrome** (or the live demo link).
-4. Press **S** → **Allow audio + MIDI access** → pick your loopback input → **Start**.
+4. Press **S** → **Allow audio + MIDI access** → pick your input → **Start**.
 
 The **B · M · H** meters at the bottom show what the page hears. If they stay flat, the audio routing is the problem.
 
-### Optional: exact tempo from Traktor
+### Optional: exact tempo over MIDI clock (e.g. Traktor)
 
-Enable *Preferences → MIDI Clock → Send MIDI Clock*, route it to the **IAC Driver** bus, and choose that bus as **Tempo source** in the panel. The beat and bar counter then follow Traktor's master clock exactly. Without it, beats come from kick detection.
+Enable *Preferences → MIDI Clock → Send MIDI Clock*, route it to the **IAC Driver** bus, and choose that bus as **Tempo source** in the panel. The beat and bar counter then follow the master clock exactly. Any software or hardware that sends MIDI clock works the same way. Without it, beats come from kick detection on the audio.
 
 ## Controls
 
