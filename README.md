@@ -13,6 +13,8 @@
 </p>
 
 <p align="center">
+  <strong><a href="https://nizar2104.github.io/NO-MAD-visuals/">▶ Open the live demo</a></strong>
+  &nbsp;·&nbsp;
   <a href="https://www.instagram.com/no.mad.dj_/">Instagram @no.mad.dj_</a>
 </p>
 
@@ -50,14 +52,16 @@ Each band is measured against its own recent level, so it reacts to the *hits* e
 
 ## Quick start
 
+**Just want to see it?** Open the [live demo](https://nizar2104.github.io/NO-MAD-visuals/) in Chrome, press **S**, allow audio and pick an input — your mic works for a quick test. For a real set, route your DJ software's audio in as below.
+
 1. **Route your DJ software's audio into the browser** with a loopback device:
    - [BlackHole](https://existential.audio/blackhole/) (free) — create a *Multi-Output Device* in Audio MIDI Setup with your speakers + BlackHole, and set Traktor's output to it; **or**
    - [Loopback](https://rogueamoeba.com/loopback/) — make a virtual device with Traktor as its source.
-2. **Serve the folder** (browsers need `http://` for audio and MIDI):
+2. **Use the [live demo](https://nizar2104.github.io/NO-MAD-visuals/)**, or **serve the folder yourself** for offline use at gigs (browsers need `http://` for audio and MIDI):
    ```bash
    python3 -m http.server 8765
    ```
-3. Open **http://localhost:8765** in **Chrome**.
+3. Open **http://localhost:8765** in **Chrome** (or the live demo link).
 4. Press **S** → **Allow audio + MIDI access** → pick your loopback input → **Start**.
 
 The **B · M · H** meters at the bottom show what the page hears. If they stay flat, the audio routing is the problem.
