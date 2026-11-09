@@ -1,0 +1,16 @@
+# Third-party assets used locally — not redistributed (add your own, see README)
+bust.obj
+brain.mp4
+brain.webm
+brain.obj
+body.obj
+overlay.mp4
+overlay.webm
+font.woff2
+font.woff
+font.ttf
+font.otf
+
+# Tooling
+.claude/
+.DS_Store
